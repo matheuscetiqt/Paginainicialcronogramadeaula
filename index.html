@@ -42,14 +42,14 @@
     margin-bottom: 35px;
   }
 
-  /* Container para organizar os botões verticalmente */
   .button-group {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
 
-  button, .btn-link {
+  /* Estilo base para os botões e links */
+  .btn {
     background: #ff6600;
     border: none;
     color: white;
@@ -59,21 +59,21 @@
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-    text-decoration: none; /* Para o link parecer um botão */
-    display: inline-block;
+    text-decoration: none;
+    display: block; /* Garante que ocupe a largura do grupo */
   }
 
-  button:hover, .btn-link:hover {
+  .btn:hover {
     background: #e65c00;
     transform: scale(1.05);
   }
 
-  /* Cor diferenciada para o curso já realizado */
-  .btn-secundario {
-    background: #00a859; /* Um tom de verde para diferenciar do principal */
+  /* Estilo específico para o curso anterior (opcional, mude se quiser a mesma cor) */
+  .btn-producao {
+    background: #00a859;
   }
   
-  .btn-secundario:hover {
+  .btn-producao:hover {
     background: #008f4c;
   }
 
@@ -93,9 +93,9 @@
   <p>Sistema de Planejamento Acadêmico<br>SENAI CETIQT</p>
   
   <div class="button-group">
-    <button onclick="entrarSistema()">Entrar no Sistema</button>
+    <a href="cronograma.html" class="btn">Cronograma de Cursos</a>
 
-    <a href="https://matheuscetiqt.github.io/Paginainicialcronogramadeaula/" class="btn-link btn-secundario">
+    <a href="https://matheuscetiqt.github.io/Paginainicialcronogramadeaula/" class="btn btn-producao">
       Produção Industrial Inteligente
     </a>
   </div>
@@ -104,13 +104,6 @@
 <footer>
   Desenvolvido por <strong>Matheus Damica Rodrigues Conceição</strong>
 </footer>
-
-<script>
-  function entrarSistema() {
-    // Certifique-se que o arquivo do seu cronograma atual se chama 'cronograma.html'
-    window.location.href = "cronograma.html"; 
-  }
-</script>
 
 </body>
 </html>
