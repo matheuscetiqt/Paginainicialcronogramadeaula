@@ -42,7 +42,14 @@
     margin-bottom: 35px;
   }
 
-  button {
+  /* Container para organizar os botões verticalmente */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button, .btn-link {
     background: #ff6600;
     border: none;
     color: white;
@@ -52,11 +59,22 @@
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none; /* Para o link parecer um botão */
+    display: inline-block;
   }
 
-  button:hover {
+  button:hover, .btn-link:hover {
     background: #e65c00;
     transform: scale(1.05);
+  }
+
+  /* Cor diferenciada para o curso já realizado */
+  .btn-secundario {
+    background: #00a859; /* Um tom de verde para diferenciar do principal */
+  }
+  
+  .btn-secundario:hover {
+    background: #008f4c;
   }
 
   footer {
@@ -74,7 +92,13 @@
   <h1>Cronograma de Cursos</h1>
   <p>Sistema de Planejamento Acadêmico<br>SENAI CETIQT</p>
   
-  <button onclick="entrarSistema()">Entrar no Sistema</button>
+  <div class="button-group">
+    <button onclick="entrarSistema()">Entrar no Sistema</button>
+
+    <a href="https://matheuscetiqt.github.io/Paginainicialcronogramadeaula/" class="btn-link btn-secundario">
+      Produção Industrial Inteligente
+    </a>
+  </div>
 </div>
 
 <footer>
@@ -83,8 +107,8 @@
 
 <script>
   function entrarSistema() {
+    // Certifique-se que o arquivo do seu cronograma atual se chama 'cronograma.html'
     window.location.href = "cronograma.html"; 
-    // 🔼 Coloque aqui o nome do arquivo onde está seu sistema do cronograma
   }
 </script>
 
